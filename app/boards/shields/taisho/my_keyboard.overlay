@@ -1,1 +1,52 @@
+/* * Copyright (c) 2020 The ZMK Contributors
+ * SPDX-License-Identifier: MIT
+ */
 
+#include <dt-bindings/zmk/matrix_transform.h>
+
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+        zmk,matrix_transform = &default_transform;
+    };
+
+    default_transform: matrix_transform {
+        compatible = "zmk,matrix-transform";
+        rows = <1>;
+        cols = <26>;
+        map = <
+            RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4) RC(0,5) RC(0,6) RC(0,7) RC(0,8) RC(0,9) RC(0,10) RC(0,11) RC(0,12)
+            RC(0,13) RC(0,14) RC(0,15) RC(0,16) RC(0,17) RC(0,18) RC(0,19) RC(0,20) RC(0,21) RC(0,22) RC(0,23) RC(0,24) RC(0,25)
+        >;
+    };
+
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-direct";
+        diode-direction = "col2row"; // この行は必須ですが、ダイレクトピンでは無視されます。
+        
+        input-gpios = <
+            // 26個のキーに対応するGPIOピンを列挙します
+            // ピン名はあなたの使用するMCUによって異なります
+            &pro_micro_d0 GPIO_ACTIVE_HIGH
+            &pro_micro_d1 GPIO_ACTIVE_HIGH
+            &pro_micro_d2 GPIO_ACTIVE_HIGH
+            &pro_micro_d3 GPIO_ACTIVE_HIGH
+            &pro_micro_d4 GPIO_ACTIVE_HIGH
+            &pro_micro_d5 GPIO_ACTIVE_HIGH
+            &pro_micro_d6 GPIO_ACTIVE_HIGH
+            &pro_micro_d7 GPIO_ACTIVE_HIGH
+            &pro_micro_d8 GPIO_ACTIVE_HIGH
+            &pro_micro_d9 GPIO_ACTIVE_HIGH
+            &pro_micro_d10 GPIO_ACTIVE_HIGH
+            &pro_micro_d16 GPIO_ACTIVE_HIGH
+            &pro_micro_d14 GPIO_ACTIVE_HIGH
+            &pro_micro_a0 GPIO_ACTIVE_HIGH
+            &pro_micro_a1 GPIO_ACTIVE_HIGH
+            &pro_micro_a2 GPIO_ACTIVE_HIGH
+            &pro_micro_a3 GPIO_ACTIVE_HIGH
+            &pro_micro_a4 GPIO_ACTIVE_HIGH
+            &pro_micro_a5 GPIO_ACTIVE_HIGH
+            // 残りのピンを記述
+        >;
+    };
+};

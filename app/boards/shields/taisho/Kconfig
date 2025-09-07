@@ -1,1 +1,22 @@
+# Kconfig
+#
+# Copyright (c) 2020 The ZMK Contributors
+# SPDX-License-Identifier: MIT
 
+config SHIELD_MY_KEYBOARD
+    def_bool $(shields_has_keyboard_overlay)
+
+# キーボード名を定義
+config ZMK_KEYBOARD_NAME_FULL
+    default "My Keyboard"
+
+# 無線（Bluetooth）通信を有効化
+CONFIG_ZMK_BLE=y
+
+# ダイレクトピン方式でのキーマトリクススキャンを有効化
+CONFIG_ZMK_KSCAN_MATRIX_DIRECT=y
+
+# キーの総数を設定
+# 26キーに対応
+CONFIG_ZMK_KSCAN_MATRIX_ROWS=1
+CONFIG_ZMK_KSCAN_MATRIX_COLS=26

@@ -22,31 +22,36 @@
 
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-direct";
-        diode-direction = "col2row"; // この行は必須ですが、ダイレクトピンでは無視されます。
+        diode-direction = "col2row";
         
         input-gpios = <
-            // 26個のキーに対応するGPIOピンを列挙します
-            // ピン名はあなたの使用するMCUによって異なります
-            &pro_micro_d0 GPIO_ACTIVE_HIGH
-            &pro_micro_d1 GPIO_ACTIVE_HIGH
-            &pro_micro_d2 GPIO_ACTIVE_HIGH
-            &pro_micro_d3 GPIO_ACTIVE_HIGH
-            &pro_micro_d4 GPIO_ACTIVE_HIGH
-            &pro_micro_d5 GPIO_ACTIVE_HIGH
-            &pro_micro_d6 GPIO_ACTIVE_HIGH
-            &pro_micro_d7 GPIO_ACTIVE_HIGH
-            &pro_micro_d8 GPIO_ACTIVE_HIGH
-            &pro_micro_d9 GPIO_ACTIVE_HIGH
-            &pro_micro_d10 GPIO_ACTIVE_HIGH
-            &pro_micro_d16 GPIO_ACTIVE_HIGH
-            &pro_micro_d14 GPIO_ACTIVE_HIGH
-            &pro_micro_a0 GPIO_ACTIVE_HIGH
-            &pro_micro_a1 GPIO_ACTIVE_HIGH
-            &pro_micro_a2 GPIO_ACTIVE_HIGH
-            &pro_micro_a3 GPIO_ACTIVE_HIGH
-            &pro_micro_a4 GPIO_ACTIVE_HIGH
-            &pro_micro_a5 GPIO_ACTIVE_HIGH
-            // 残りのピンを記述
+            // 26個のキーに対応するピンを記述
+            &gpio0 P0_8 GPIO_ACTIVE_HIGH
+            &gpio0 P0_11 GPIO_ACTIVE_HIGH
+            &gpio0 P0_18 GPIO_ACTIVE_HIGH
+            &gpio0 P0_16 GPIO_ACTIVE_HIGH
+            &gpio0 P0_19 GPIO_ACTIVE_HIGH
+            &gpio0 P0_20 GPIO_ACTIVE_HIGH
+            &gpio0 P0_22 GPIO_ACTIVE_HIGH
+            &gpio0 P0_23 GPIO_ACTIVE_HIGH
+            &gpio1 P1_0 GPIO_ACTIVE_HIGH
+            &gpio1 P1_3 GPIO_ACTIVE_HIGH
+            &gpio0 P0_9 GPIO_ACTIVE_HIGH
+            &gpio0 P0_10 GPIO_ACTIVE_HIGH
+            &gpio1 P1_15 GPIO_ACTIVE_HIGH
+            &gpio1 P1_14 GPIO_ACTIVE_HIGH
+            &gpio0 P0_3 GPIO_ACTIVE_HIGH
+            &gpio0 P0_30 GPIO_ACTIVE_HIGH
+            &gpio0 P0_0 GPIO_ACTIVE_HIGH
+            &gpio0 P0_5 GPIO_ACTIVE_HIGH
+            &gpio0 P0_17 GPIO_ACTIVE_HIGH
+            &gpio0 P0_21 GPIO_ACTIVE_HIGH
+            &gpio0 P0_24 GPIO_ACTIVE_HIGH
+            &gpio1 P1_2 GPIO_ACTIVE_HIGH
+            &gpio1 P1_10 GPIO_ACTIVE_HIGH
+            &gpio1 P1_11 GPIO_ACTIVE_HIGH
+            &gpio0 P0_29 GPIO_ACTIVE_HIGH
+            &gpio0 P0_31 GPIO_ACTIVE_HIGH
         >;
     };
 };
